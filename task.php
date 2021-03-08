@@ -25,6 +25,7 @@ print("#####q3#####" . PHP_EOL);
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9];
 
 # 以下に回答を記載
+$NumCount = 0;
 foreach ($numbers as $number) {
   if ($number === 3) {
     $NumCount++;
@@ -114,7 +115,7 @@ $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍�
 # 以下に回答を記載
 $preference = [];
 foreach ($foods as $food) {
-  if (strpos($food, "うに") === 0) {
+  if (preg_match("/うに/", $food) === 1) {
     array_push($preference, "好物です");
   } else {
     array_push($preference, "まぁまぁ好きです。");
@@ -141,7 +142,7 @@ $AllSports = array_unique($AllSports);
 echo "ユーザーの趣味一覧";
 echo PHP_EOL;
 foreach ($AllSports as $key => $value) {
-  echo $SportsList, "No." . $No . " " . $value;
+  echo "No." . $No . " " . $value;
   $No++;
   echo PHP_EOL;
 }
