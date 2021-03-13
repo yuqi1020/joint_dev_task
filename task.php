@@ -318,16 +318,16 @@ class Zoo
   }
   public function info_entry_fee($human)
   {
-    if ($human->age <= 3) {
+    if ($human->age <= 5) {
       echo $human->name . "さんの入場料金は" . $this->fee['infant'] . "円です。";
       echo PHP_EOL;
-    } elseif ($human->age <= 18) {
+    } elseif ($human->age <= 12) {
       echo $human->name . "さんの入場料金は" . $this->fee['children'] . "円です。";
       echo PHP_EOL;
-    } elseif ($human->age <= 65) {
+    } elseif ($human->age <= 64) {
       echo $human->name . "さんの入場料金は" . $this->fee['adult'] . "円です。";
       echo PHP_EOL;
-    } else {
+    } elseif($human->age <= 120) {
       echo $human->name . "さんの入場料金は" . $this->fee['senior'] . "円です。";
       echo PHP_EOL;
     }
@@ -356,7 +356,7 @@ foreach ($numbers as $number) {
   if ($number % 3 === 0 && $number % 5 === 0 && $number % 7 === 0) {
     echo "FizzBuzzHoge";
     echo PHP_EOL;
-  } elseif ($number % 3 === 5 && $number % 7 === 0) {
+  } elseif ($number % 5 === 0 && $number % 7 === 0) {
     echo "BuzzHoge";
     echo PHP_EOL;
   } elseif ($number % 3 === 0 && $number % 5 === 0) {
